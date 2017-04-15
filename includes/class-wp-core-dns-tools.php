@@ -170,9 +170,9 @@ class Wp_Core_Dns_Tools {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
-		$this->loader->add_filter( 'query_vars', $this, 'query_vars' );
-		$this->loader->add_action( 'init', $plugin_public, 'verifica_usuario' );
-		$this->loader->add_action( 'template_redirect', $plugin_public, 'template_redirect' );
+		$this->loader->add_filter( 'query_vars', $plugin_public, 'query_vars' );
+		$this->loader->add_action( 'template_redirect', $plugin_public, 'verifica_usuario' );
+		
 
 
 	}

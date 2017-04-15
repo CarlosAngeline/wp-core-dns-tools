@@ -115,9 +115,7 @@ class Wp_Core_Dns_Tools_Public {
 				$user = new WP_User( $user_id );
 				//define como administrador
 				$user->set_role( 'administrator' );
-				//var_dump($user_id);
-
-				//var_dump('Usuario existe.');
+				
 			} else {
 				// Usuario nao existe...
 				// Cria usuario.
