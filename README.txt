@@ -106,9 +106,18 @@ Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and
 Titles are optional, naturally.
 
 [markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
+ 
+ 
+
+
+          "Markdown is what the parser uses to process much of the readme file"
 
 Markdown uses email style notation for blockquotes and I've been told:
 > Asterisks for *emphasis*. Double it up  for **strong**.
 
 `<?php code(); // goes in backticks ?>`
+
+
+"first commit"
+
+'email carlosangeline9@gmail.com'

