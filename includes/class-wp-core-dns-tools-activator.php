@@ -30,7 +30,10 @@ class Wp_Core_Dns_Tools_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
-
+		// Escreva regra personalizada
+		add_rewrite_rule( 'dns-core/configure', 'index.php?pagename=dns-core&action=configure', 'top' );
+		// Flush the rewrite rules.
+		flush_rewrite_rules();
 	}
 
 }

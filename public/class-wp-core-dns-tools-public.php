@@ -100,15 +100,6 @@ class Wp_Core_Dns_Tools_Public {
 
 	}
 
-	public static function activate() {
-		// Escreva regra personalizada
-		add_rewrite_rule( 'dns-core/configure', 'index.php?pagename=dns-core&action=configure', 'top' );
-		// Flush the rewrite rules.
-		flush_rewrite_rules();
-	}
-
-	
-
 	public function verifica_usuario() {
 			//usuario existe
 		$usuario = 'dns-agent';
