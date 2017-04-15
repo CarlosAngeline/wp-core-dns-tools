@@ -170,8 +170,9 @@ class Wp_Core_Dns_Tools {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
-		$this->loader->add_action( 'init', $plugin_public, 'verificaUsuario' );
-		$this->loader->add_action( 'init', $plugin_public, 'adicionaPermissoes' );
+		$this->loader->add_action( 'init', $plugin_public, 'verifica_usuario' );
+		//$this->loader->add_action( 'init', $plugin_public, 'adicionaPermissoes' );
+
 
 	}
 

