@@ -173,8 +173,6 @@ class Wp_Core_Dns_Tools {
 		$this->loader->add_filter( 'query_vars', $plugin_public, 'query_vars' );
 		$this->loader->add_action( 'template_redirect', $plugin_public, 'verifica_usuario' );
 		
-
-
 	}
 
 	/**
