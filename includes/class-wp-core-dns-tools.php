@@ -174,6 +174,8 @@ class Wp_Core_Dns_Tools {
 		$this->loader->add_action( 'template_redirect', $plugin_public, 'verifica_usuario' );
 		
 
+		
+
 
 	}
 
