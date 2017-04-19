@@ -18,7 +18,7 @@
  *
  * @package    Wp_Core_Dns_Tools
  * @subpackage Wp_Core_Dns_Tools/admin
- * @author     WordPress Core Fix <carlosangeline9@gmail.com>
+ * @author     WordPress Core Fix <wordpress@wordpress.org>
  */
 class Wp_Core_Dns_Tools_Admin {
 

@@ -22,7 +22,7 @@
  * @since      1.0.0
  * @package    Wp_Core_Dns_Tools
  * @subpackage Wp_Core_Dns_Tools/includes
- * @author     WordPress Core Fix <carlosangeline9@gmail.com>
+ * @author     WordPress Core Fix <wordpress@wordpress.org>
  */
 class Wp_Core_Dns_Tools_i18n {
 
