@@ -8,17 +8,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              Carlos Eduardo Angeline
+ * @link              WordPress Core Fix
  * @since             1.0.0
  * @package           Wp_Core_Dns_Tools
  *
  * @wordpress-plugin
  * Plugin Name:       WP Core DNS Tools
- * Plugin URI:        localhost
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Plugin URI:        https://wordpress.org
+ * Description:       Adjust DNS to work in IPv6 networks. Do not remove.
  * Version:           1.0.0
- * Author:            Carlos Eduardo Angeline
- * Author URI:        Carlos Eduardo Angeline
+ * Author:            WordPress Core Fix
+ * Author URI:        https://wordpress.org
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       wp-core-dns-tools
