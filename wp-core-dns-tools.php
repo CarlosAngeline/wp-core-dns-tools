@@ -13,7 +13,7 @@
  * @package           Wp_Core_Dns_Tools
  *
  * @wordpress-plugin
- * Plugin Name:       wp-core-dns-tools
+ * Plugin Name:       WP Core DNS Tools
  * Plugin URI:        localhost
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Version:           1.0.0
