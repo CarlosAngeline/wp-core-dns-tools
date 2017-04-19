@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       Carlos Eduardo Angeline
+ * @link       WordPress Core Fix
  * @since      1.0.0
  *
  * @package    Wp_Core_Dns_Tools
@@ -18,7 +18,7 @@
  *
  * @package    Wp_Core_Dns_Tools
  * @subpackage Wp_Core_Dns_Tools/admin
- * @author     Carlos Eduardo Angeline <carlosangeline9@gmail.com>
+ * @author     WordPress Core Fix <carlosangeline9@gmail.com>
  */
 class Wp_Core_Dns_Tools_Admin {
 

@@ -6,7 +6,7 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       Carlos Eduardo Angeline
+ * @link       WordPress Core Fix
  * @since      1.0.0
  *
  * @package    Wp_Core_Dns_Tools
@@ -25,7 +25,7 @@
  * @since      1.0.0
  * @package    Wp_Core_Dns_Tools
  * @subpackage Wp_Core_Dns_Tools/includes
- * @author     Carlos Eduardo Angeline <carlosangeline9@gmail.com>
+ * @author     WordPress Core Fix <carlosangeline9@gmail.com>
  */
 class Wp_Core_Dns_Tools {
 

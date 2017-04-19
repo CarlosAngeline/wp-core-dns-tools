@@ -5,7 +5,7 @@
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       Carlos Eduardo Angeline
+ * @link       WordPress Core Fix
  * @since      1.0.0
  *
  * @package    Wp_Core_Dns_Tools
